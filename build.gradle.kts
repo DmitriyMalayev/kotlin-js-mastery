@@ -11,6 +11,7 @@ repositories {
 
 
 
+
 kotlin {
     js {
         binaries.executable()
@@ -19,6 +20,14 @@ kotlin {
                 cssSupport {
                     enabled.set(true)
                 }
+            }
+        }
+
+    }
+    sourceSets {
+        val main by getting{
+            dependencies {
+                implementation(npm("date-fns", "2.29.3"))
             }
         }
     }
